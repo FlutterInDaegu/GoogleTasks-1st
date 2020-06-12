@@ -39,8 +39,8 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        //applicationId "org.flutterindaegu.google_tasks_1st"
-        applicationId "com.android.application"
+        applicationId "org.flutterindaegu.google_tasks_1st"
+        //applicationId "com.android.application"
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()

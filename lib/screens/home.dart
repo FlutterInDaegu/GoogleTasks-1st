@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:googletask/blocs/theme.dart';
+import 'package:google_tasks_1st/blocs/theme.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
@@ -20,7 +20,7 @@ class _Home extends State<Home> {
             Expanded(
               child: Text(
                 doc['name'],
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
             ),
             Container(
@@ -28,7 +28,7 @@ class _Home extends State<Home> {
               padding: const EdgeInsets.all(10.0),
               child: Text(
                 doc['age'].toString(),
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.bodyText2,
               ),
             ),
           ],

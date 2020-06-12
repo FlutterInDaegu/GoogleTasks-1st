@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'blocs/route.dart';
-import 'blocs/theme.dart';
+import 'package:google_tasks_1st/blocs/route_.dart';
+import 'package:google_tasks_1st/blocs/routes.dart';
+import 'package:google_tasks_1st/blocs/theme.dart';
 
 void main() {
   runApp(
@@ -23,6 +24,13 @@ class MyApp extends StatelessWidget {
 class MaterialAppWithTheme extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return route();
+    final theme = Provider.of<ThemeChanger>(context);
+    return MaterialApp(
+      title: 'Flutter in Daegu - clone coding',
+      debugShowCheckedModeBanner: false,
+      theme: theme.getTheme(),
+      initialRoute: Routes.initialRoute,
+      routes: Routes.getMaps,
+    );
   }
 }
