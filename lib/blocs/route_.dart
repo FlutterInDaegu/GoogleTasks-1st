@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:googletask/blocs/theme.dart';
-import 'package:googletask/screens/home.dart';
-import 'package:googletask/screens/intro.dart';
+import 'package:google_tasks_1st/blocs/theme.dart';
+import 'package:google_tasks_1st/screens/home.dart';
+import 'package:google_tasks_1st/screens/intro.dart';
+
 import 'package:provider/provider.dart';
 
 class route extends StatelessWidget {

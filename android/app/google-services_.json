@@ -58,35 +58,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:667461425723:android:431319a130acb3eb159a1e",
-        "android_client_info": {
-          "package_name": "org.flutterindaegu.google_tasks_1st"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "667461425723-ng3c632sfu918rp58534bf80ffl307j7.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyB9XSVBN8VJ5cMRzLRVI3LaUvSuQzxfz1w"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "667461425723-ng3c632sfu918rp58534bf80ffl307j7.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"
