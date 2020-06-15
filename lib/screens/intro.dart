@@ -1,5 +1,5 @@
+import 'package:Google_tasks_1st/blocs/routes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_tasks_1st/blocs/routes.dart';
 
 class Intro extends StatefulWidget {
   Intro({Key key, this.title}) : super(key: key);

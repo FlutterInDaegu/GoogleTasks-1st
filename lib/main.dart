@@ -1,9 +1,7 @@
+import 'package:Google_tasks_1st/blocs/routes.dart';
+import 'package:Google_tasks_1st/blocs/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'package:google_tasks_1st/blocs/route_.dart';
-import 'package:google_tasks_1st/blocs/routes.dart';
-import 'package:google_tasks_1st/blocs/theme.dart';
 
 void main() {
   runApp(

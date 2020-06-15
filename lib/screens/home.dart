@@ -1,6 +1,6 @@
+import 'package:Google_tasks_1st/blocs/theme.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:google_tasks_1st/blocs/theme.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatefulWidget {
