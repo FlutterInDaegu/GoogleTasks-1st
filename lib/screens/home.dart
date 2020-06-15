@@ -15,6 +15,10 @@ class _Home extends State<Home> {
 
     Widget _buildListItem(BuildContext context, DocumentSnapshot doc) {
       return ListTile(
+        onTap: () {
+          print(doc.data.keys);
+          print(doc.data.values);
+        },
         title: Row(
           children: <Widget>[
             Expanded(
@@ -53,21 +57,29 @@ class _Home extends State<Home> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    'images/first_empty.jpg',
-                    fit: BoxFit.contain,
-                  ),
-                  Text(
-                    '새로 시작',
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
-                  ),
-                  Text(
-                    '할 일을 추가 하시겠습니까?',
-                  ),
                   StreamBuilder(
                     stream: Firestore.instance.collection('main').snapshots(),
                     builder: (context, snapshot) {
-                      if (!snapshot.hasData) return Text('Loding...');
+                      if (!snapshot.hasData)
+                        return Expanded(
+                          flex: 0,
+                          child: Column(
+                            children: <Widget>[
+                              Image.asset(
+                                'images/first_empty.jpg',
+                                fit: BoxFit.contain,
+                              ),
+                              Text(
+                                '새로 시작',
+                                style: TextStyle(
+                                    fontSize: 22, fontWeight: FontWeight.w500),
+                              ),
+                              Text(
+                                '할 일을 추가 하시겠습니까?',
+                              ),
+                            ],
+                          ),
+                        );
                       return ListView.builder(
                         scrollDirection: Axis.vertical,
                         shrinkWrap: true,

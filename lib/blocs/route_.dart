@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_tasks_1st/blocs/theme.dart';
-import 'package:google_tasks_1st/screens/home.dart';
-import 'package:google_tasks_1st/screens/intro.dart';
+import 'package:Google_tasks_1st/blocs/theme.dart';
+import 'package:Google_tasks_1st/screens/home.dart';
+import 'package:Google_tasks_1st/screens/intro.dart';
 
 import 'package:provider/provider.dart';
 

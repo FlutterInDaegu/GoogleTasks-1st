@@ -1,4 +1,4 @@
-import 'package:Google_tasks_1st/blocs/routes.dart';
+import 'package:Google_tasks_1st/blocs/routers.dart';
 import 'package:flutter/material.dart';
 
 class Intro extends StatefulWidget {
@@ -49,7 +49,8 @@ class _IntroPageState extends State<Intro> {
               ),
               onPressed: () {
                 print('시작하기 클릭');
-                Navigator.pushNamed(context, Routes.home);
+                print(Routers.getMaps);
+                Navigator.pushNamed(context, Routers.home);
               },
             ),
           ],

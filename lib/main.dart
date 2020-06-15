@@ -1,5 +1,7 @@
-import 'package:Google_tasks_1st/blocs/routes.dart';
+import 'package:Google_tasks_1st/blocs/routers.dart';
 import 'package:Google_tasks_1st/blocs/theme.dart';
+import 'package:Google_tasks_1st/screens/home.dart';
+import 'package:Google_tasks_1st/screens/intro.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -27,8 +29,12 @@ class MaterialAppWithTheme extends StatelessWidget {
       title: 'Flutter in Daegu - clone coding',
       debugShowCheckedModeBanner: false,
       theme: theme.getTheme(),
-      initialRoute: Routes.initialRoute,
-      routes: Routes.getMaps,
+      initialRoute: Routers.initialRoute,
+//      routes: Routers.getMaps,
+      routes: {
+        '/': (_) => Intro(),
+        '/home': (_) => Home(),
+      },
     );
   }
 }
