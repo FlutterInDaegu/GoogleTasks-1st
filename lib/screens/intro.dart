@@ -49,8 +49,8 @@ class _IntroPageState extends State<Intro> {
               ),
               onPressed: () {
                 print('시작하기 클릭');
-                print(Routers.getMaps);
-                Navigator.pushNamed(context, Routers.home);
+                //Navigator.pushNamed(context, Routers.home);
+                Navigator.of(context).pushNamed(Routers.home);
               },
             ),
           ],

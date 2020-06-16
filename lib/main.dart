@@ -30,11 +30,15 @@ class MaterialAppWithTheme extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: theme.getTheme(),
       initialRoute: Routers.initialRoute,
-//      routes: Routers.getMaps,
+      //routes: Routers.getMaps,
       routes: {
         '/': (_) => Intro(),
         '/home': (_) => Home(),
       },
+//      routes: {
+//        Routers.intro: (_) => Intro(),
+//        Routers.home: (_) => Home(),
+//      },
     );
   }
 }

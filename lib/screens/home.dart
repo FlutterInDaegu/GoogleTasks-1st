@@ -16,8 +16,14 @@ class _Home extends State<Home> {
     Widget _buildListItem(BuildContext context, DocumentSnapshot doc) {
       return ListTile(
         onTap: () {
-          print(doc.data.keys);
-          print(doc.data.values);
+//          doc.reference.updateData({'age': doc['age'] + 1});
+          Firestore.instance.runTransaction((transaction) async {
+            DocumentSnapshot freshSnap = await transaction.get(doc.reference);
+            await transaction.update(freshSnap.reference, {
+              'age': freshSnap['age'] + 1,
+            });
+            print('트렌젝선을 이용한 +1');
+          });
         },
         title: Row(
           children: <Widget>[
