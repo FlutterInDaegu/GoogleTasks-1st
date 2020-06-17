@@ -15,41 +15,53 @@ class _Home extends State<Home> {
 
     Widget _buildListItem(BuildContext context, DocumentSnapshot doc) {
       return ListTile(
-        onTap: () {
-//          doc.reference.updateData({'age': doc['age'] + 1});
-          Firestore.instance.runTransaction((transaction) async {
-            DocumentSnapshot freshSnap = await transaction.get(doc.reference);
-            await transaction.update(freshSnap.reference, {
-              'age': freshSnap['age'] + 1,
-            });
-            print('트렌젝선을 이용한 +1');
-          });
+        onTap: () async {
+          //await countUp(doc);
         },
-        title: Row(
+        title: Column(
           children: <Widget>[
-            Expanded(
-              child: Text(
-                doc['name'],
-                style: Theme.of(context).textTheme.bodyText2,
-              ),
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  width: 60.0,
+                  child: FlatButton(
+                    onPressed: () {
+                      print('완료');
+                    },
+                    child: Icon(
+                      Icons.radio_button_unchecked,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Text(
+                    doc['name'],
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                ),
+                Container(
+                  decoration: const BoxDecoration(),
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text(
+                    doc['age'].toString(),
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                ),
+              ],
             ),
-            Container(
-              decoration: const BoxDecoration(),
-              padding: const EdgeInsets.all(10.0),
-              child: Text(
-                doc['age'].toString(),
-                style: Theme.of(context).textTheme.bodyText2,
-              ),
-            ),
+            SizedBox(
+              height: 2,
+              child: Container(color: Colors.grey),
+            )
           ],
         ),
       );
     }
 
     return new Scaffold(
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 80),
@@ -137,5 +149,14 @@ class _Home extends State<Home> {
         ),
       ),
     );
+  }
+
+  Future countUp(DocumentSnapshot doc) async {
+    Firestore.instance.runTransaction((transaction) async {
+      DocumentSnapshot freshSnap = await transaction.get(doc.reference);
+      await transaction.update(freshSnap.reference, {
+        'age': freshSnap['age'] + 1,
+      });
+    });
   }
 }
