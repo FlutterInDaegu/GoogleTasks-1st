@@ -16,7 +16,7 @@ class _Home extends State<Home> {
     Widget _buildListItem(BuildContext context, DocumentSnapshot doc) {
       return ListTile(
         onTap: () async {
-          //await countUp(doc);
+          await countUp(doc);
         },
         title: Column(
           children: <Widget>[

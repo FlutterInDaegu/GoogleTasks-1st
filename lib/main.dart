@@ -1,7 +1,5 @@
 import 'package:Google_tasks_1st/blocs/routers.dart';
 import 'package:Google_tasks_1st/blocs/theme.dart';
-import 'package:Google_tasks_1st/screens/home.dart';
-import 'package:Google_tasks_1st/screens/intro.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -30,15 +28,7 @@ class MaterialAppWithTheme extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: theme.getTheme(),
       initialRoute: Routers.initialRoute,
-      //routes: Routers.getMaps,
-      routes: {
-        '/': (_) => Intro(),
-        '/home': (_) => Home(),
-      },
-//      routes: {
-//        Routers.intro: (_) => Intro(),
-//        Routers.home: (_) => Home(),
-//      },
+      routes: Routers.getMaps,
     );
   }
 }

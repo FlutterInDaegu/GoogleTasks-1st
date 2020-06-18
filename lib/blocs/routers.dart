@@ -5,10 +5,11 @@ import 'package:flutter/cupertino.dart';
 class Routers {
   static const initialRoute = '/';
   static const String home = '/home';
-  static const String intro = '/intro';
+  //static const String intro = '/intro';
 
   static Map<String, WidgetBuilder> getMaps = <String, WidgetBuilder>{
+    initialRoute: (_) => Intro(),
     home: (_) => Home(),
-    intro: (_) => Intro(),
+    //intro: (_) => Intro(),
   };
 }
