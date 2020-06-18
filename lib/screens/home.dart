@@ -16,20 +16,14 @@ class _Home extends State<Home> {
 
     Widget _buildListItem(BuildContext context, DocumentSnapshot doc) {
       return ListTile(
-<<<<<<< HEAD
         onTap: () async {
           await countUp(doc);
-=======
-        onTap: () {
-          doc.reference.updateData({'age': doc['age'] + 1});
+          //onTap: () {
+          //doc.reference.updateData({'age': doc['age'] + 1});
         },
-//        onTap: () async {
-//          //await countUp(doc);
-//        },
         onLongPress: () {
           print('롱탭');
           _showMyDialog(doc);
->>>>>>> 1ac5404a8365cc33c302c0cb10901855ed67a4ba
         },
         title: Column(
           children: <Widget>[
