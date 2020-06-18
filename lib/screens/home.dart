@@ -22,7 +22,6 @@ class _Home extends State<Home> {
           //doc.reference.updateData({'age': doc['age'] + 1});
         },
         onLongPress: () {
-          print('롱탭');
           _showMyDialog(doc);
         },
         title: Column(
@@ -43,7 +42,7 @@ class _Home extends State<Home> {
                 Expanded(
                   child: Text(
                     doc['name'],
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
                 Container(
@@ -51,7 +50,7 @@ class _Home extends State<Home> {
                   padding: const EdgeInsets.all(10.0),
                   child: Text(
                     doc['age'].toString(),
-                    style: Theme.of(context).textTheme.bodyText2,
+                    style: Theme.of(context).textTheme.headline6,
                   ),
                 ),
               ],
@@ -80,41 +79,43 @@ class _Home extends State<Home> {
                 ),
               ),
             ),
-            StreamBuilder(
-              stream: Firestore.instance.collection('main').snapshots(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData)
-                  return Expanded(
-                    flex: 0,
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset(
-                          'images/first_empty.jpg',
-                          fit: BoxFit.contain,
-                        ),
-                        Text(
-                          '새로 시작',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.w500),
-                        ),
-                        Text(
-                          '할 일을 추가 하시겠습니까?',
-                        ),
-                      ],
-                    ),
-                  );
-                return ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  //itemExtent: 80.0,
-                  itemCount: snapshot.data.documents.length,
-                  itemBuilder: (context, index) =>
-                      _buildListItem(context, snapshot.data.documents[index]),
-                );
-              },
-            ),
+//            StreamBuilder(
+//              stream: Firestore.instance.collection('main').snapshots(),
+//              builder: (context, snapshot) {
+//                if (!snapshot.hasData)
+//                  return Expanded(
+//                    flex: 1,
+//                    child: Column(
+//                      children: <Widget>[
+//                        Image.asset(
+//                          'images/first_empty.jpg',
+//                          fit: BoxFit.contain,
+//                        ),
+//                        Text(
+//                          '새로 시작',
+//                          style: TextStyle(
+//                              fontSize: 22, fontWeight: FontWeight.w500),
+//                        ),
+//                        Text(
+//                          '할 일을 추가 하시겠습니까?',
+//                        ),
+//                      ],
+//                    ),
+//                  );
+//                return Container(
+//                  child: ListView.builder(
+//                    scrollDirection: Axis.vertical,
+//                    shrinkWrap: true,
+//                    //itemExtent: 100.0,
+//                    itemCount: snapshot.data.documents.length,
+//                    itemBuilder: (context, index) =>
+//                        _buildListItem(context, snapshot.data.documents[index]),
+//                  ),
+//                );
+//              },
+//            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 RaisedButton(
                   child: Icon(
@@ -132,10 +133,7 @@ class _Home extends State<Home> {
                   onPressed: () {
                     print('메모 추가하기');
                     //text 입력 위젯이 나타나게 하기
-//                    doc.reference
-//                        .collection('main')
-//                        .document('1')
-//                        .setData({'age': 44, 'name': '권영각'});
+                    //doc.reference.collection('main').document('1').setData({'age': 44, 'name': '권영각'});
                   },
                 ),
                 RaisedButton(
